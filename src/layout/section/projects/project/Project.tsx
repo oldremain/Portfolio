@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FlexWrapper } from "@/components/FlexWrapper";
 import { Button } from "@/components/Button";
+import { theme } from "@/styles/Theme";
 
 type ProjectProps = {
   img: string;
@@ -40,8 +41,8 @@ export const Project = ({
 const StyledProject = styled.div`
   width: 100%;
   max-width: 332px;
-  border: 1px solid var(--color-primary);
-  color: var(--color-primary);
+  border: 1px solid ${theme.colors.primary};
+  color: ${theme.colors.primary};
   cursor: pointer;
   transition: all 0.2s ease;
   .view-btn {
@@ -64,7 +65,7 @@ const Technologies = styled.div`
   padding: 8px;
   display: flex;
   gap: 8px;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid ${theme.colors.primary};
 `;
 
 const StyledBody = styled.div`
@@ -73,7 +74,7 @@ const StyledBody = styled.div`
 
 const Title = styled.div`
   margin-bottom: 16px;
-  color: var(--color-secondary);
+  color: ${theme.colors.secondary};
   font-weight: 500;
 `;
 

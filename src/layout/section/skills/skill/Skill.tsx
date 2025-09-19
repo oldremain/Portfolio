@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FlexWrapper } from "@/components/FlexWrapper";
+import { theme } from "@/styles/Theme";
 
 type SkillProps = {
   title: string;
@@ -24,7 +25,7 @@ export const Skill = ({ title, skills }: SkillProps) => {
 
 const StyledSkill = styled.div`
   max-width: 196px;
-  border: 1px solid var(--color-primary);
+  border: 1px solid ${theme.colors.primary};
   .skill-list {
     padding: 8px;
   }
@@ -32,7 +33,7 @@ const StyledSkill = styled.div`
 
 const SkillTitle = styled.h3`
   padding: 8px;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid ${theme.colors.primary};
   font-weight: 600;
-  color: var(--color-secondary);
+  color: ${theme.colors.secondary};
 `;

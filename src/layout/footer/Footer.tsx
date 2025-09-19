@@ -3,13 +3,15 @@ import styled from "styled-components";
 import { FlexWrapper } from "@/components/FlexWrapper";
 import { Logo } from "@/components/logo/Logo";
 import { Icon } from "@/components/icon/Icon";
+import { Container } from "@/components/Container";
+import { theme } from "@/styles/Theme";
 
 export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
     <StyledFooter>
-      <div className="container">
+      <Container>
         <FlexWrapper align="center" justify="space-between">
           <AboutMe>
             <Logo />
@@ -21,7 +23,7 @@ export const Footer = () => {
               <SocialLinkItem>
                 <SocialLink>
                   <Icon
-                    name="telegram"
+                    name="github"
                     width="32"
                     height="32"
                     viewBox="0 0 32 32"
@@ -31,23 +33,18 @@ export const Footer = () => {
               <SocialLinkItem>
                 <SocialLink>
                   <Icon
-                    name="email"
+                    name="linkedin"
                     width="32"
                     height="32"
                     viewBox="0 0 32 32"
                   />
                 </SocialLink>
               </SocialLinkItem>
-              {/* <SocialLinkItem>
-                <SocialLink>
-                  <Icon name="" width="16" height="16" viewBox="0 0 16 16" />
-                </SocialLink>
-              </SocialLinkItem> */}
             </SocialLinksList>
           </div>
         </FlexWrapper>
         <Copyright>© Copyright {year}. Made by Oleg</Copyright>
-      </div>
+      </Container>
     </StyledFooter>
   );
 };
@@ -55,7 +52,7 @@ export const Footer = () => {
 const StyledFooter = styled.footer`
   position: relative;
   padding: 22px 0;
-  border-top: 1px solid var(--color-primary);
+  border-top: 1px solid ${theme.colors.primary};
 `;
 
 const AboutMe = styled.div`
@@ -63,7 +60,7 @@ const AboutMe = styled.div`
     margin-bottom: 12px;
   }
   p {
-    color: var(--color-secondary);
+    color: ${theme.colors.secondary};
     font-family: monospace;
   }
 `;

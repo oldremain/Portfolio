@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "@/styles/Theme";
 
 type ButtonProps = React.ComponentProps<typeof StyledButton>;
 
@@ -9,8 +10,8 @@ export const Button = (props: ButtonProps) => {
 export const StyledButton = styled.a`
   padding: 8px 16px;
   font-weight: 500;
-  color: var(--color-secondary);
-  border: 1px solid var(--color-accent);
+  color: ${theme.colors.secondary};
+  border: 1px solid ${theme.colors.accent};
   cursor: pointer;
   transition: all 0.2s ease;
   &:hover {

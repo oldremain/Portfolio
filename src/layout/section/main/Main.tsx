@@ -1,10 +1,12 @@
 import styled, { keyframes } from "styled-components";
 import { Button } from "@/components/Button";
+import { Container } from "@/components/Container";
+import { theme } from "@/styles/Theme";
 import imgUrl from "@/assets/images/main-img.png";
 
 export const Main = () => {
   return (
-    <div>
+    <Container>
       <StyledMain>
         <div>
           <StyledGreeting>
@@ -28,7 +30,7 @@ export const Main = () => {
         <StyledQuote>"Simplicity is the soul of efficiency"</StyledQuote>
         <StyledAuthor>- Austin Freeman</StyledAuthor>
       </StyledQuoteWrapper>
-    </div>
+    </Container>
   );
 };
 
@@ -38,13 +40,13 @@ const StyledMain = styled.div`
   align-items: center;
   gap: 20px;
   padding-top: 62px;
-  color: var(--color-secondary);
+  color: ${theme.colors.secondary};
 `;
 
 const StyledGreeting = styled.div`
   max-width: 463px;
   margin-bottom: 24px;
-  color: var(--color-secondary);
+  color: ${theme.colors.secondary};
   font-family: monospace;
   font-weight: 700;
   font-size: 24px;
@@ -52,12 +54,12 @@ const StyledGreeting = styled.div`
     margin-top: 20px;
     font-weight: 500;
     font-size: 16px;
-    color: var(--color-primary);
+    color: ${theme.colors.primary};
   }
 `;
 
 const StyledAccent = styled.span`
-  color: var(--color-accent);
+  color: ${theme.colors.accent};
   font-weight: 600;
 `;
 
@@ -77,12 +79,12 @@ const PhotoDescription = styled.div`
   padding: 4px 12px;
   width: max-content;
   margin: -12px auto 0;
-  border: 1px solid var(--color-primary);
-  background-color: var(--color-bg);
+  border: 1px solid ${theme.colors.primary};
+  background-color: ${theme.colors.bg};
   span {
     padding-top: 2px;
     font-weight: 700;
-    color: var(--color-accent);
+    color: ${theme.colors.accent};
     font-family: monospace;
     font-size: 16px;
   }
@@ -121,7 +123,7 @@ const PulseDot = styled.div`
   width: 8px;
   height: 8px;
   margin-right: 4px;
-  background: var(--color-accent);
+  background: ${theme.colors.accent};
   border-radius: 50%;
   position: relative;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.15);
@@ -150,18 +152,18 @@ const StyledQuoteWrapper = styled.div`
   font-family: monospace;
   font-size: 22px;
   font-weight: 500;
-  color: var(--color-secondary);
+  color: ${theme.colors.secondary};
 `;
 
 const StyledQuote = styled.div`
   margin-left: auto;
   padding: 16px 32px;
-  border: 1px solid var(--color-primary);
+  border: 1px solid ${theme.colors.primary};
 `;
 
 const StyledAuthor = styled.div`
   margin-left: auto;
   padding: 16px 32px;
-  border: 1px solid var(--color-primary);
+  border: 1px solid ${theme.colors.secondary};
   border-top: 0;
 `;

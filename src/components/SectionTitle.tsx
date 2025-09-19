@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "@/styles/Theme";
 
 type SectionTitleProps = {
   title?: string;
@@ -29,10 +30,10 @@ const StyledSectionTitle = styled.h2<{
   font-family: monospace;
   font-size: 28px;
   font-weight: 500;
-  color: var(--color-secondary);
+  color: ${theme.colors.secondary};
   &::before {
     content: "#";
-    color: var(--color-accent);
+    color: ${theme.colors.accent};
   }
   &::after {
     content: "";
@@ -41,6 +42,6 @@ const StyledSectionTitle = styled.h2<{
     width: 100%;
     max-width: ${(props) => props.$lineMaxWidth};
     margin-left: 16px;
-    background-color: var(--color-accent);
+    background-color: ${theme.colors.accent};
   }
 `;
