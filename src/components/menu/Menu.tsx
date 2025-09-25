@@ -1,56 +1,55 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Menu = () => {
+const links = [
+  { label: "home", path: "/" },
+  { label: "works", path: "#works" },
+  { label: "about-me", path: "#about-me" },
+  { label: "contacts", path: "#contacts" },
+];
+
+type MenuProps = React.HTMLAttributes<HTMLDivElement>;
+
+export const Menu = (props: MenuProps) => {
   return (
-    <StyledMenu>
-      <ul>
-        <li>
-          <a href="">
-            <span className="hashtag">#</span>home
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <span className="hashtag">#</span>works
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <span className="hashtag">#</span>about-me
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <span className="hashtag">#</span>contacts
-          </a>
-        </li>
-      </ul>
+    <StyledMenu {...props}>
+      <MenuList>
+        {links.map((it) => (
+          <li key={it.label}>
+            <MenuLink href={it.path}>
+              <HashTag>#</HashTag>
+              {it.label}
+            </MenuLink>
+          </li>
+        ))}
+      </MenuList>
     </StyledMenu>
   );
 };
 
-const StyledMenu = styled.nav`
-  ul {
-    display: flex;
-    gap: 32px;
+const StyledMenu = styled.nav``;
+
+const MenuList = styled.ul`
+  display: flex;
+  gap: 32px;
+`;
+
+const MenuLink = styled.a`
+  color: #abb2bf;
+  transition: all 0.2s ease;
+  &:hover {
+    color: #ffffff;
   }
-  a {
-    color: #abb2bf;
-    transition: all 0.2s ease;
-    &:hover {
-      color: #ffffff;
-    }
-    &:active {
-      font-weight: 500;
-    }
+  &:active {
+    font-weight: 500;
   }
-  .hashtag {
-    padding-right: 2px;
-    color: #c778dd;
-    transition: all 0.2s ease;
-    &:active {
-      font-weight: 500;
-    }
+`;
+
+const HashTag = styled.span`
+  padding-right: 2px;
+  color: #c778dd;
+  transition: all 0.2s ease;
+  &:active {
+    font-weight: 500;
   }
 `;

@@ -12,7 +12,7 @@ export const Footer = () => {
   return (
     <StyledFooter>
       <Container>
-        <FlexWrapper align="center" justify="space-between">
+        <FlexWrapper $align="center" $justify="space-between">
           <AboutMe>
             <Logo />
             <p>Front-end developer</p>
@@ -53,6 +53,10 @@ const StyledFooter = styled.footer`
   position: relative;
   padding: 22px 0;
   border-top: 1px solid ${theme.colors.primary};
+
+  @media ${theme.media.tablet} {
+    padding: 16px 0;
+  }
 `;
 
 const AboutMe = styled.div`
@@ -63,6 +67,12 @@ const AboutMe = styled.div`
     color: ${theme.colors.secondary};
     font-family: monospace;
   }
+
+  @media ${theme.media.tablet} {
+    a {
+      margin-bottom: 8px;
+    }
+  }
 `;
 
 const SocialLinksTitle = styled.span`
@@ -71,6 +81,10 @@ const SocialLinksTitle = styled.span`
   font-family: monospace;
   font-weight: 500;
   font-size: 22px;
+
+  @media ${theme.media.tablet} {
+    margin-bottom: 8px;
+  }
 `;
 
 const SocialLinksList = styled.ul`
@@ -90,4 +104,8 @@ const Copyright = styled.small`
   margin-top: 40px;
   text-align: center;
   font-family: monospace;
+
+  @media ${theme.media.tablet} {
+    margin-top: 30px;
+  }
 `;

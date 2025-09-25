@@ -71,4 +71,9 @@ a {
 li {
   list-style: none;
 }
+
+button {
+  background-color: transparent;
+  border: none;
+}
 `;

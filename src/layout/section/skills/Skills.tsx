@@ -1,30 +1,27 @@
-import React from "react";
 import styled from "styled-components";
 import { SectionTitle } from "@/components/SectionTitle";
 import { FlexWrapper } from "@/components/FlexWrapper";
 import { Container } from "@/components/Container";
-import { Skill } from "./skill/Skill";
-import skillsImg from "@/assets/images/skills-img.png";
+import { SkillsGroup } from "./skillsGroup/SkillsGroup";
+import { theme } from "@/styles/Theme";
+import skillsImg from "@/assets/images/skills-img.webp";
 
 export const Skills = () => {
   return (
     <StyledSection>
       <Container>
-        <SectionTitle title="skills" />
-        <FlexWrapper gap={60}>
+        <SectionTitle title="skills" $lineMaxWidth="250px" />
+        <FlexWrapper $gap={60}>
           <Image src={skillsImg} alt="" />
-          <FlexWrapper
-            className="skills-wrp"
-            wrap="wrap"
-            justify="end"
-            grow={1}
-            gap={16}
-          >
-            <Skill title="Languages" skills={["TypeScript", "JavaScript"]} />
-            <Skill title="Tools" skills={["VSCode", "Git", "Figma"]} />
-            <Skill title="Frameworks" skills={["React", "Vue"]} />
-            <Skill title="Other" skills={["HTML", "Css", "SCSS"]} />
-          </FlexWrapper>
+          <SkillsWrapper $wrap="wrap" $justify="end" $grow={1} $gap={16}>
+            <SkillsGroup
+              title="Languages"
+              skills={["TypeScript", "JavaScript"]}
+            />
+            <SkillsGroup title="Tools" skills={["VSCode", "Git", "Figma"]} />
+            <SkillsGroup title="Frameworks" skills={["React", "Vue"]} />
+            <SkillsGroup title="Other" skills={["HTML", "Css", "SCSS"]} />
+          </SkillsWrapper>
         </FlexWrapper>
       </Container>
     </StyledSection>
@@ -32,9 +29,21 @@ export const Skills = () => {
 };
 
 const StyledSection = styled.section`
-  padding: var(--section-padding);
-  .skills-wrp {
-    margin-top: 30px;
+  padding: ${theme.padding.section.desktop};
+
+  @media ${theme.media.tablet} {
+    padding: ${theme.padding.section.mobile};
+  }
+`;
+
+const SkillsWrapper = styled(FlexWrapper)`
+  margin-top: 30px;
+
+  @media ${theme.media.tablet} {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-top: 0;
   }
 `;
 
@@ -42,4 +51,8 @@ const Image = styled.img`
   width: 350px;
   height: 282px;
   object-fit: contain;
+
+  @media ${theme.media.tablet} {
+    display: none;
+  }
 `;

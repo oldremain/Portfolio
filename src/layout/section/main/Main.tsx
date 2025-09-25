@@ -1,49 +1,59 @@
 import styled, { keyframes } from "styled-components";
+import { theme } from "@/styles/Theme";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
-import { theme } from "@/styles/Theme";
-import imgUrl from "@/assets/images/main-img.png";
+import { FlexWrapper } from "@/components/FlexWrapper";
+import imgUrl from "@/assets/images/main-img.webp";
 
 export const Main = () => {
   return (
-    <Container>
-      <StyledMain>
-        <div>
-          <StyledGreeting>
-            Hi 👋, <br />
-            My name is <StyledAccent>Oleg</StyledAccent>.
-            <h1>
-              I am <StyledAccent>front-end developer</StyledAccent>
-            </h1>
-            <h2>I create modern and user-friendly interfaces</h2>
-          </StyledGreeting>
-          <Button>Contact me 🧑‍💻</Button>
-        </div>
-        <div>
-          <Photo src={imgUrl} alt="" />
-          <PhotoDescription>
-            <PulseDot /> Currently working on <span>Portfolio</span>
-          </PhotoDescription>
-        </div>
-      </StyledMain>
-      <StyledQuoteWrapper>
-        <StyledQuote>"Simplicity is the soul of efficiency"</StyledQuote>
-        <StyledAuthor>- Austin Freeman</StyledAuthor>
-      </StyledQuoteWrapper>
-    </Container>
+    <StyledSection>
+      <Container>
+        <FlexWrapper
+          $align="center"
+          $justify="space-between"
+          $gap={20}
+          $wrap="wrap"
+        >
+          <Content>
+            <Greeting>
+              Hi 👋, <br />
+              My name is <Accent>Oleg</Accent>
+              <h1>
+                I am <Accent>front-end developer</Accent>
+              </h1>
+              <h2>I create modern and user-friendly interfaces</h2>
+            </Greeting>
+            <Button>Contact me 🧑‍💻</Button>
+          </Content>
+          <div>
+            <PhotoWrapper>
+              <Photo src={imgUrl} alt="" />
+            </PhotoWrapper>
+            <PhotoDescription>
+              <PulseDot /> Currently working on <span>Portfolio</span>
+            </PhotoDescription>
+          </div>
+        </FlexWrapper>
+      </Container>
+    </StyledSection>
   );
 };
 
-const StyledMain = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding-top: 62px;
+const StyledSection = styled.section`
+  padding-top: 86px;
   color: ${theme.colors.secondary};
+
+  @media ${theme.media.tablet} {
+    padding-top: 76px;
+  }
 `;
 
-const StyledGreeting = styled.div`
+const Content = styled.div`
+  text-align: left;
+`;
+
+const Greeting = styled.div`
   max-width: 463px;
   margin-bottom: 24px;
   color: ${theme.colors.secondary};
@@ -58,14 +68,26 @@ const StyledGreeting = styled.div`
   }
 `;
 
-const StyledAccent = styled.span`
+const Accent = styled.span`
   color: ${theme.colors.accent};
   font-weight: 600;
 `;
 
-const Photo = styled.img`
+const PhotoWrapper = styled.div`
   width: 470px;
   height: 386px;
+
+  @media ${theme.media.tablet} {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+`;
+
+const Photo = styled.img`
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 `;
 
@@ -79,14 +101,13 @@ const PhotoDescription = styled.div`
   padding: 4px 12px;
   width: max-content;
   margin: -12px auto 0;
+  font-family: monospace;
+  font-size: 15px;
   border: 1px solid ${theme.colors.primary};
   background-color: ${theme.colors.bg};
   span {
-    padding-top: 2px;
     font-weight: 700;
     color: ${theme.colors.accent};
-    font-family: monospace;
-    font-size: 16px;
   }
 `;
 
@@ -140,30 +161,4 @@ const PulseDot = styled.div`
     background: #c778de20;
     animation: ${pulseFade} 1.6s infinite cubic-bezier(0.4, 0, 0.2, 1);
   }
-`;
-
-const StyledQuoteWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 712px;
-  margin: 80px auto 0;
-  font-family: monospace;
-  font-size: 22px;
-  font-weight: 500;
-  color: ${theme.colors.secondary};
-`;
-
-const StyledQuote = styled.div`
-  margin-left: auto;
-  padding: 16px 32px;
-  border: 1px solid ${theme.colors.primary};
-`;
-
-const StyledAuthor = styled.div`
-  margin-left: auto;
-  padding: 16px 32px;
-  border: 1px solid ${theme.colors.secondary};
-  border-top: 0;
 `;

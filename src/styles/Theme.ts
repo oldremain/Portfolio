@@ -6,6 +6,12 @@ export const theme = {
     bg: "#292b33",
   },
   padding: {
-    section: "56px 0",
+    section: {
+      desktop: "56px 0",
+      mobile: "26px 0",
+    },
+  },
+  media: {
+    tablet: "screen and (max-width: 993px)",
   },
 };
