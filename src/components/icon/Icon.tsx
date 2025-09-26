@@ -1,3 +1,5 @@
+import spriteImg from "@/assets/images/icons-sprite.svg";
+
 type IconProps = React.SVGAttributes<SVGElement> & {
   name: string;
   width?: string;
@@ -23,7 +25,7 @@ export const Icon = ({
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
-      <use xlinkHref={`/src/assets/images/icons-sprite.svg#${name}`} />
+      <use xlinkHref={`${spriteImg}#${name}`} />
     </svg>
   );
 };
