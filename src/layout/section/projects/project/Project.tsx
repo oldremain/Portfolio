@@ -45,7 +45,6 @@ const StyledProject = styled.div`
   cursor: pointer;
   transition: all 0.2s ease;
   .view-btn {
-    font-family: monospace;
     span {
       padding-left: 2px;
     }

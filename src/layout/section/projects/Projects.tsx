@@ -47,6 +47,7 @@ const StyledSection = styled.section`
   @media ${theme.media.tablet} {
     ${FlexWrapper} {
       flex-wrap: wrap;
+      justify-content: center;
     }
   }
 
@@ -61,7 +62,7 @@ const ProjectRectImg = styled.img`
   top: 50%;
   transform: translateY(-50%);
 
-  @media ${theme.media.tablet} {
+  @media ${theme.media.desktop} {
     display: none;
   }
 `;

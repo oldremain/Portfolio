@@ -48,6 +48,5 @@ const SkillsList = styled(FlexWrapper)`
 `;
 
 const SkillTitle = styled.span`
-  font-family: monospace;
   font-size: 14px;
 `;

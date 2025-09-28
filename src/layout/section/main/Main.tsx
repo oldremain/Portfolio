@@ -46,6 +46,10 @@ const StyledSection = styled.section`
 
   @media ${theme.media.tablet} {
     padding-top: 76px;
+
+    ${FlexWrapper} {
+      justify-content: center;
+    }
   }
 `;
 
@@ -57,7 +61,6 @@ const Greeting = styled.div`
   max-width: 463px;
   margin-bottom: 24px;
   color: ${theme.colors.secondary};
-  font-family: monospace;
   font-weight: 700;
   font-size: 24px;
   h2 {
@@ -101,7 +104,6 @@ const PhotoDescription = styled.div`
   padding: 4px 12px;
   width: max-content;
   margin: -12px auto 0;
-  font-family: monospace;
   font-size: 15px;
   border: 1px solid ${theme.colors.primary};
   background-color: ${theme.colors.bg};

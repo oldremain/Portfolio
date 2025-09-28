@@ -27,7 +27,6 @@ const StyledLink = styled.a`
   display: flex;
   align-items: center;
   gap: 2px;
-  font-family: monospace;
   .icon {
     flex-shrink: 0;
   }

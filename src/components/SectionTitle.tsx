@@ -27,7 +27,6 @@ const StyledSectionTitle = styled.h2<{
   align-items: center;
   gap: 2px;
   margin: ${(props) => props.$margin};
-  font-family: monospace;
   font-size: 28px;
   font-weight: 500;
   color: ${theme.colors.secondary};

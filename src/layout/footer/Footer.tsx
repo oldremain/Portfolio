@@ -64,7 +64,6 @@ const AboutMe = styled.div`
   }
   p {
     color: ${theme.colors.secondary};
-    font-family: monospace;
   }
 
   @media ${theme.media.tablet} {
@@ -77,7 +76,6 @@ const AboutMe = styled.div`
 const SocialLinksTitle = styled.span`
   display: inline-block;
   margin-bottom: 12px;
-  font-family: monospace;
   font-weight: 500;
   font-size: 22px;
 
@@ -102,7 +100,6 @@ const Copyright = styled.small`
   display: block;
   margin-top: 40px;
   text-align: center;
-  font-family: monospace;
 
   @media ${theme.media.tablet} {
     margin-top: 30px;

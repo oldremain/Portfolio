@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { theme } from "@/styles/Theme";
+import { font } from "@/styles/Common";
 import { Container } from "@/components/Container";
 import { FlexWrapper } from "@/components/FlexWrapper";
 import { Icon } from "@/components/icon/Icon";
@@ -30,29 +31,38 @@ export const Quote = () => {
 
 const StyledSection = styled.section`
   position: relative;
-  padding-top: 112px;
+  padding-top: 98px;
   padding-bottom: 20px;
 
   ${FlexWrapper} {
     width: 100%;
-    max-width: 545px;
+    max-width: 555px;
     margin: 0 auto;
     color: ${theme.colors.secondary};
-    font-family: monospace;
+    justify-content: center;
   }
 
   @media ${theme.media.tablet} {
     padding-top: 70px;
     padding-bottom: 30px;
+
+    ${FlexWrapper} {
+      max-width: 425px;
+    }
   }
 `;
 
 const StyledQuote = styled.div`
+  ${font({
+    weight: 500,
+    Fmin: 18,
+    Fmax: 22,
+    lineHeight: 1.3,
+    color: theme.colors.secondary,
+  })}
   position: relative;
   padding: 16px 32px;
   margin-left: auto;
-  font-size: 22px;
-  font-weight: 500;
   border: 1px solid ${theme.colors.primary};
 
   svg {
@@ -72,8 +82,6 @@ const StyledQuote = styled.div`
   @media ${theme.media.tablet} {
     padding: 10px 16px;
     text-align: center;
-    font-size: 18px;
-    line-height: 1.3;
 
     svg {
       width: 25px;
@@ -82,17 +90,15 @@ const StyledQuote = styled.div`
 `;
 
 const Author = styled.div`
+  ${font({ Fmin: 16, Fmax: 18, color: theme.colors.secondary })}
   margin-left: auto;
   padding: 16px 32px;
-  font-size: 18px;
   border: 1px solid ${theme.colors.primary};
   border-top: 0;
 
   @media ${theme.media.tablet} {
     padding: 10px 16px;
     text-align: center;
-    font-size: 16px;
-    line-height: 1.3;
   }
 `;
 

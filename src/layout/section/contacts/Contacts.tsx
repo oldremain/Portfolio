@@ -66,14 +66,13 @@ const LeftRectImg = styled.img`
   top: calc(20px + 50%);
   transform: translateY(-50%);
 
-  @media ${theme.media.tablet} {
+  @media ${theme.media.desktop} {
     display: none;
   }
 `;
 
 const AboutMe = styled.p`
   max-width: 505px;
-  font-family: monospace;
   font-size: 14px;
 `;
 

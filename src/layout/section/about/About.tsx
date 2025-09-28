@@ -57,7 +57,7 @@ const LeftRectImg = styled.img`
   top: 50%;
   transform: translateY(-50%);
 
-  @media ${theme.media.tablet} {
+  @media ${theme.media.desktop} {
     display: none;
   }
 `;
@@ -68,14 +68,13 @@ const RightRectImg = styled.img`
   top: calc(180px + 50%);
   transform: translateY(-50%);
 
-  @media ${theme.media.tablet} {
+  @media ${theme.media.desktop} {
     display: none;
   }
 `;
 
 const StyledPresentation = styled.div`
   max-width: 515px;
-  font-family: monospace;
   font-size: 14px;
   text-align: start;
   p {
