@@ -8,7 +8,11 @@ type ContactLinkProps = {
   children: React.ReactNode;
 };
 
-export const ContactLink = ({ url, iconName, children }: ContactLinkProps) => {
+export const ContactLink: React.FC<ContactLinkProps> = ({
+  url,
+  iconName,
+  children,
+}: ContactLinkProps) => {
   return (
     <StyledLink href={url}>
       <Icon

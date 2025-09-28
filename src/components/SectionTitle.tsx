@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import { theme } from "@/styles/Theme";
 
@@ -7,7 +8,7 @@ type SectionTitleProps = {
   $lineMaxWidth?: string;
 };
 
-export const SectionTitle = ({
+export const SectionTitle: React.FC<SectionTitleProps> = ({
   title,
   $margin = "0 0 20px 0",
   $lineMaxWidth = "150px",

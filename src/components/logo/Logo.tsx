@@ -1,7 +1,7 @@
 import { Icon } from "@/components/icon/Icon";
 import styled from "styled-components";
 
-export const Logo = () => {
+export const Logo: React.FC = () => {
   return (
     <StyledLogo href="/">
       <Icon

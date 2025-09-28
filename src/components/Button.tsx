@@ -1,9 +1,10 @@
+import React from "react";
 import styled from "styled-components";
 import { theme } from "@/styles/Theme";
 
 type ButtonProps = React.ComponentProps<typeof StyledButton>;
 
-export const Button = (props: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
   return <StyledButton {...props} />;
 };
 

@@ -1,25 +1,25 @@
-import styled from "styled-components";
-import { theme } from "@/styles/Theme";
+import React from "react";
 import { SectionTitle } from "@/components/SectionTitle";
 import { FlexWrapper } from "@/components/FlexWrapper";
 import { Container } from "@/components/Container";
 import { ContactLink } from "./ContactLink";
 import leftRectImg from "@/assets/images/contacts-rect.webp";
+import { S } from "./Contacts_Styles";
 
-export const Contacts = () => {
+export const Contacts: React.FC = () => {
   return (
-    <StyledSection id="contacts">
-      <LeftRectImg src={leftRectImg} alt="" />
+    <S.Section id="contacts">
+      <S.LeftRectImg src={leftRectImg} alt="" />
       <Container>
         <SectionTitle title="contacts" />
         <FlexWrapper $gap={20}>
-          <AboutMe>
+          <S.AboutMe>
             I’m open to job opportunities in a company. If you have any other
             requests or questions, feel free to reach out to me.
-          </AboutMe>
-          <ContactsBox>
-            <ContactsTitle>Message me here</ContactsTitle>
-            <ContactsList>
+          </S.AboutMe>
+          <S.ContactsBox>
+            <S.ContactsTitle>Message me here</S.ContactsTitle>
+            <S.ContactsList>
               <li>
                 <ContactLink url="https://t.me/phdpixxel" iconName="telegram">
                   phdpixxel
@@ -33,79 +33,10 @@ export const Contacts = () => {
                   30oleg.zv94@gmail.com
                 </ContactLink>
               </li>
-            </ContactsList>
-          </ContactsBox>
+            </S.ContactsList>
+          </S.ContactsBox>
         </FlexWrapper>
       </Container>
-    </StyledSection>
+    </S.Section>
   );
 };
-
-const StyledSection = styled.section`
-  position: relative;
-  padding: ${theme.padding.section.desktop};
-  padding-bottom: 156px;
-
-  ${FlexWrapper} {
-    margin-top: 30px;
-  }
-
-  @media ${theme.media.tablet} {
-    padding: ${theme.padding.section.mobile};
-
-    ${FlexWrapper} {
-      margin-top: 20px;
-      flex-direction: column;
-    }
-  }
-`;
-
-const LeftRectImg = styled.img`
-  position: absolute;
-  left: 0;
-  top: calc(20px + 50%);
-  transform: translateY(-50%);
-
-  @media ${theme.media.desktop} {
-    display: none;
-  }
-`;
-
-const AboutMe = styled.p`
-  max-width: 505px;
-  font-size: 14px;
-`;
-
-const ContactsBox = styled.div`
-  padding: 14px;
-  margin-left: auto;
-  border: 1px solid ${theme.colors.primary};
-
-  @media ${theme.media.tablet} {
-    padding: 10px;
-    margin-left: 0;
-    width: 100%;
-  }
-`;
-
-const ContactsTitle = styled.div`
-  margin-bottom: 12px;
-  color: ${theme.colors.secondary};
-
-  @media ${theme.media.tablet} {
-    margin-bottom: 8px;
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    text-decoration-thickness: 0.5px;
-  }
-`;
-
-const ContactsList = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  @media ${theme.media.tablet} {
-    gap: 6px;
-  }
-`;

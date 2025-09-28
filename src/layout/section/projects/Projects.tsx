@@ -1,18 +1,18 @@
-import styled from "styled-components";
+import React from "react";
 import { SectionTitle } from "@/components/SectionTitle";
 import { FlexWrapper } from "@/components/FlexWrapper";
 import { Container } from "@/components/Container";
 import { Project } from "./project/Project";
-import { theme } from "@/styles/Theme";
+import { S } from "./Projects_Styles";
 import projectImg1 from "@/assets/images/project-1.webp";
 import projectImg2 from "@/assets/images/project-2.webp";
 import projectImg3 from "@/assets/images/project-3.webp";
 import projectsRectImg from "@/assets/images/projects-rect.webp";
 
-export const Projects = () => {
+export const Projects: React.FC = () => {
   return (
-    <StyledSection id="works">
-      <ProjectRectImg src={projectsRectImg} alt="" />
+    <S.Section id="works">
+      <S.ProjectRectImg src={projectsRectImg} alt="" />
       <Container>
         <SectionTitle title="projects" $lineMaxWidth="500px" />
         <FlexWrapper $gap={16} $justify="space-between">
@@ -36,33 +36,6 @@ export const Projects = () => {
           />
         </FlexWrapper>
       </Container>
-    </StyledSection>
+    </S.Section>
   );
 };
-
-const StyledSection = styled.section`
-  position: relative;
-  padding: ${theme.padding.section.desktop};
-
-  @media ${theme.media.tablet} {
-    ${FlexWrapper} {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-  }
-
-  @media ${theme.media.tablet} {
-    padding: ${theme.padding.section.mobile};
-  }
-`;
-
-const ProjectRectImg = styled.img`
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-
-  @media ${theme.media.desktop} {
-    display: none;
-  }
-`;

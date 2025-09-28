@@ -1,3 +1,4 @@
+import React from "react";
 import spriteImg from "@/assets/images/icons-sprite.svg";
 
 type IconProps = React.SVGAttributes<SVGElement> & {
@@ -8,7 +9,7 @@ type IconProps = React.SVGAttributes<SVGElement> & {
   color?: string;
 };
 
-export const Icon = ({
+export const Icon: React.FC<IconProps> = ({
   name,
   width = "40",
   height = "40",

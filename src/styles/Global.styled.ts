@@ -15,11 +15,12 @@ body {
   font-family: 'Fira Code', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
   background-color: ${theme.colors.bg};
   color: ${theme.colors.primary};
+  min-width: 360px;
 }
 
 img,

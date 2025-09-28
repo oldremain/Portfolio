@@ -1,37 +1,29 @@
-import styled from "styled-components";
-import { theme } from "@/styles/Theme";
+import React, { useEffect, useState } from "react";
 import { Logo } from "@/components/logo/Logo";
-import { Menu } from "@/components/menu/Menu";
+import { DesktopMenu } from "@/layout/header/headerMenu/desktopMenu/DesktopMenu";
+import { MobileMenu } from "@/layout/header/headerMenu/mobileMenu/MobileMenu";
 import { Container } from "@/components/Container";
 import { FlexWrapper } from "@/components/FlexWrapper";
-import { MobileMenu } from "@/components/menu/mobileMenu/MobileMenu";
+import { S } from "./Header_Styles";
 
-export const Header = () => {
+export const Header: React.FC = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 993;
+
+  useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
   return (
-    <StyledHeader>
+    <S.Header>
       <Container>
         <FlexWrapper $align="center" $justify="space-between">
           <Logo />
-          <NavLinks />
-          <MobileMenu />
+          {width < breakpoint ? <MobileMenu /> : <DesktopMenu />}
         </FlexWrapper>
       </Container>
-    </StyledHeader>
+    </S.Header>
   );
 };
-
-const StyledHeader = styled.header`
-  padding: 20px 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
-  background-color: ${theme.colors.bg};
-`;
-
-const NavLinks = styled(Menu)`
-  @media ${theme.media.tablet} {
-    display: none;
-  }
-`;
