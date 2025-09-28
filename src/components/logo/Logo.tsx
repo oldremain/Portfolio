@@ -1,9 +1,9 @@
 import { Icon } from "@/components/icon/Icon";
-import styled from "styled-components";
+import { S } from "./Logo_Styles";
 
 export const Logo: React.FC = () => {
   return (
-    <StyledLogo href="/">
+    <S.Logo href="/">
       <Icon
         name="logo"
         width="20"
@@ -11,19 +11,7 @@ export const Logo: React.FC = () => {
         viewBox="0 0 20 20"
         color="white"
       />
-      <Name>Oleg</Name>
-    </StyledLogo>
+      <S.Name>Oleg</S.Name>
+    </S.Logo>
   );
 };
-
-const StyledLogo = styled.a`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-`;
-
-const Name = styled.div`
-  font-weight: 700;
-  font-size: 20px;
-  color: #fff;
-`;
