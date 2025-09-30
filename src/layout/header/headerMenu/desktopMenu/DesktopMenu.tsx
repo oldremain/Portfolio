@@ -12,7 +12,7 @@ type MenuProps = React.HTMLAttributes<HTMLDivElement>;
 
 export const DesktopMenu: React.FC<MenuProps> = (props: MenuProps) => {
   return (
-    <S.DesktopMenu {...props}>
+    <S.Menu {...props}>
       <S.MenuList>
         {links.map((it) => (
           <li key={it.label}>
@@ -23,6 +23,6 @@ export const DesktopMenu: React.FC<MenuProps> = (props: MenuProps) => {
           </li>
         ))}
       </S.MenuList>
-    </S.DesktopMenu>
+    </S.Menu>
   );
 };

@@ -12,7 +12,7 @@ const Header = styled.header`
   background-color: ${theme.colors.bg};
 `;
 
-const DesktopMenu = styled.nav``;
+const Menu = styled.nav``;
 
 const MenuList = styled.ul`
   display: flex;
@@ -65,7 +65,7 @@ const Overlay = styled.div<{ $open: boolean }>`
   }
 `;
 
-const NavLinks = styled(DesktopMenu)`
+const MobileNavLinks = styled.div`
   margin-top: 47px;
   font-size: 26px;
   ul {
@@ -89,14 +89,14 @@ const SocialLink = styled.a`
 
 export const S = {
   Header,
-  DesktopMenu,
+  Menu,
   MenuList,
   MenuLink,
   HashTag,
   MobileMenu,
   ActionButton,
   Overlay,
-  NavLinks,
+  MobileNavLinks,
   SocialLinks,
   SocialLink,
 };

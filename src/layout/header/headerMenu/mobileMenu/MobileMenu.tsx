@@ -3,6 +3,7 @@ import { Icon } from "@/components/icon/Icon";
 import { FlexWrapper } from "@/components/FlexWrapper";
 import { Logo } from "@/components/logo/Logo";
 import { S } from "@/layout/header/Header_Styles";
+import { DesktopMenu } from "../desktopMenu/DesktopMenu";
 
 export const MobileMenu: React.FC = () => {
   const [open, setIsOpen] = useState(false);
@@ -23,7 +24,9 @@ export const MobileMenu: React.FC = () => {
             <Icon name="closeMenu" width="24" height="24" viewBox="0 0 24 24" />
           </S.ActionButton>
         </FlexWrapper>
-        <S.NavLinks />
+        <S.MobileNavLinks>
+          <DesktopMenu />
+        </S.MobileNavLinks>
         <S.SocialLinks>
           <li>
             <S.SocialLink href="">
