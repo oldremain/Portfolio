@@ -47,8 +47,6 @@ const SocialLinkItem = styled.li`
   cursor: pointer;
 `;
 
-const SocialLink = styled.a``;
-
 const Copyright = styled.small`
   display: block;
   margin-top: 40px;
@@ -65,6 +63,5 @@ export const S = {
   SocialLinksTitle,
   SocialLinksList,
   SocialLinkItem,
-  SocialLink,
   Copyright,
 };

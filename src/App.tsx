@@ -1,26 +1,22 @@
-import { Header } from "./layout/header/Header";
-import { Aside } from "./layout/aside/Aside";
-import { Main } from "./layout/section/main/Main";
-import { Quote } from "./layout/section/quote/Quote";
-import { Skills } from "./layout/section/skills/Skills";
-import { Projects } from "./layout/section/projects/Projects";
-import { About } from "./layout/section/about/About";
-import { Contacts } from "./layout/section/contacts/Contacts";
-import { Footer } from "./layout/footer/Footer";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { MainLayout } from "./layout/MainLayout";
+import { Home } from "./pages/home/Home";
+import { Works } from "./pages/works/Works";
+import { About } from "./pages/about/About";
+import { Contacts } from "./pages/contacts/Contacts";
 
 function App() {
   return (
-    <>
-      <Aside />
-      <Header />
-      <Main />
-      <Quote />
-      <Projects />
-      <Skills />
-      <About />
-      <Contacts />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route index element={<Home />}></Route>
+          <Route path="/works" element={<Works />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/contacts" element={<Contacts />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

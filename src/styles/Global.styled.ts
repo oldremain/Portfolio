@@ -39,6 +39,10 @@ select {
   font: inherit;
 }
 
+textarea {
+  resize: none;
+}
+
 p,
 h1,
 h2,

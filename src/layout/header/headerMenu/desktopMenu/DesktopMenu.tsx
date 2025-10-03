@@ -3,12 +3,14 @@ import { S } from "@/layout/header/Header_Styles";
 
 const links = [
   { label: "home", path: "/" },
-  { label: "works", path: "#works" },
-  { label: "about-me", path: "#about-me" },
-  { label: "contacts", path: "#contacts" },
+  { label: "works", path: "/works" },
+  { label: "about-me", path: "/about" },
+  { label: "contacts", path: "/contacts" },
 ];
 
-type MenuProps = React.HTMLAttributes<HTMLDivElement>;
+type MenuProps = {
+  onClick?: () => void;
+} & React.HTMLAttributes<HTMLDivElement>;
 
 export const DesktopMenu: React.FC<MenuProps> = (props: MenuProps) => {
   return (
@@ -16,7 +18,7 @@ export const DesktopMenu: React.FC<MenuProps> = (props: MenuProps) => {
       <S.MenuList>
         {links.map((it) => (
           <li key={it.label}>
-            <S.MenuLink href={it.path}>
+            <S.MenuLink to={it.path} onClick={props.onClick}>
               <S.HashTag>#</S.HashTag>
               {it.label}
             </S.MenuLink>

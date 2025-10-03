@@ -8,7 +8,7 @@ export const theme = {
   padding: {
     section: {
       desktop: "56px 0",
-      mobile: "26px 0",
+      mobile: "16px 0",
     },
   },
   media: {

@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Icon } from "@/components/icon/Icon";
 import { FlexWrapper } from "@/components/FlexWrapper";
 import { Logo } from "@/components/logo/Logo";
-import { S } from "@/layout/header/Header_Styles";
 import { DesktopMenu } from "../desktopMenu/DesktopMenu";
+import { SocialLink } from "@/components/socialLink/SocialLink";
+import { S } from "@/layout/header/Header_Styles";
 
 export const MobileMenu: React.FC = () => {
   const [open, setIsOpen] = useState(false);
@@ -25,18 +26,24 @@ export const MobileMenu: React.FC = () => {
           </S.ActionButton>
         </FlexWrapper>
         <S.MobileNavLinks>
-          <DesktopMenu />
+          <DesktopMenu onClick={toggleMenu} />
         </S.MobileNavLinks>
         <S.SocialLinks>
           <li>
-            <S.SocialLink href="">
-              <Icon name="github" width="100%" height="100%" />
-            </S.SocialLink>
+            <SocialLink
+              href="https://github.com/oldremain"
+              icon="github"
+              width="100%"
+              height="100%"
+            />
           </li>
           <li>
-            <S.SocialLink href="">
-              <Icon name="linkedin" width="100%" height="100%" />
-            </S.SocialLink>
+            <SocialLink
+              href="https://www.linkedin.com/in/oldremain/"
+              icon="linkedin"
+              width="100%"
+              height="100%"
+            />
           </li>
         </S.SocialLinks>
       </S.Overlay>

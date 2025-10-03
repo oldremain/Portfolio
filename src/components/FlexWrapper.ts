@@ -7,6 +7,7 @@ type FlexWrapperProps = {
   $wrap?: "wrap" | "nowrap";
   $gap?: number;
   $grow?: number;
+  $margin?: string;
 };
 
 export const FlexWrapper = styled.div<FlexWrapperProps>`
@@ -17,4 +18,5 @@ export const FlexWrapper = styled.div<FlexWrapperProps>`
   flex-wrap: ${(props) => props.$wrap || "nowrap"};
   gap: ${(props) => props.$gap || 0}px;
   flex-grow: ${(props) => props.$grow || 0};
+  margin: ${(props) => props.$margin || 0};
 `;

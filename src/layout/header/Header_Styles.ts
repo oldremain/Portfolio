@@ -1,5 +1,6 @@
 import { FlexWrapper } from "@/components/FlexWrapper";
 import { theme } from "@/styles/Theme";
+import { NavLink } from "react-router";
 import styled from "styled-components";
 
 const Header = styled.header`
@@ -19,14 +20,24 @@ const MenuList = styled.ul`
   gap: 32px;
 `;
 
-const MenuLink = styled.a`
+const MenuLink = styled(NavLink)`
+  position: relative;
   color: #abb2bf;
   transition: all 0.2s ease;
   &:hover {
     color: #ffffff;
   }
-  &:active {
-    font-weight: 500;
+  &.active {
+    color: ${theme.colors.secondary};
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      bottom: -4px;
+      width: 100%;
+      height: 1px;
+      background-color: ${theme.colors.secondary};
+    }
   }
 `;
 
@@ -79,12 +90,12 @@ const SocialLinks = styled.ul`
   justify-content: center;
   gap: 8px;
   margin-top: auto;
-`;
 
-const SocialLink = styled.a`
-  display: inline-block;
-  width: 56px;
-  height: 56px;
+  a {
+    display: inline-block;
+    width: 56px;
+    height: 56px;
+  }
 `;
 
 export const S = {
@@ -98,5 +109,4 @@ export const S = {
   Overlay,
   MobileNavLinks,
   SocialLinks,
-  SocialLink,
 };

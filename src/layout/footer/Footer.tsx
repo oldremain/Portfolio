@@ -1,8 +1,8 @@
 import React from "react";
 import { FlexWrapper } from "@/components/FlexWrapper";
 import { Logo } from "@/components/logo/Logo";
-import { Icon } from "@/components/icon/Icon";
 import { Container } from "@/components/Container";
+import { SocialLink } from "@/components/socialLink/SocialLink";
 import { S } from "./Footer_Styles";
 
 export const Footer: React.FC = () => {
@@ -20,24 +20,22 @@ export const Footer: React.FC = () => {
             <S.SocialLinksTitle>Media</S.SocialLinksTitle>
             <S.SocialLinksList>
               <S.SocialLinkItem>
-                <S.SocialLink>
-                  <Icon
-                    name="github"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                  />
-                </S.SocialLink>
+                <SocialLink
+                  href="https://github.com/oldremain"
+                  icon="github"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                />
               </S.SocialLinkItem>
               <S.SocialLinkItem>
-                <S.SocialLink>
-                  <Icon
-                    name="linkedin"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                  />
-                </S.SocialLink>
+                <SocialLink
+                  href="https://www.linkedin.com/in/oldremain"
+                  icon="linkedin"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                />
               </S.SocialLinkItem>
             </S.SocialLinksList>
           </div>

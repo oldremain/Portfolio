@@ -32,11 +32,8 @@ const SocialLinkItem = styled.li`
   cursor: pointer;
 `;
 
-const SocialLink = styled.a``;
-
 export const S = {
   Aside,
   SocialLinksList,
   SocialLinkItem,
-  SocialLink,
 };
